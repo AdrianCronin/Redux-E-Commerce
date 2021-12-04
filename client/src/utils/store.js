@@ -9,7 +9,9 @@ const preLoadedState = {
 };
 
 export const store = configureStore({
-    reducer,
+    reducer:{
+        // reducers
+    },
     preLoadedState,    
 });
 
