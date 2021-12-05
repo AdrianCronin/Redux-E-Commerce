@@ -24,8 +24,13 @@ const cartSlice = createSlice({
             };
         },
         updateCartQuantity(state, action) {
-
-            
+            state.cartOpen = true;
+            state.cart.map((product) => {
+                if (action._id === product._id) {
+                    product.purchaseQuantity = action.purchaseQuantity;
+                }
+                return product;
+            });
         },
         removeFromCart(state, action) {
 
