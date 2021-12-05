@@ -38,11 +38,11 @@ const cartSlice = createSlice({
             });
             state.cartOpen =  state.cart.length > 0;
         },
-        clearCartQuantity(state, action) {
-
+        clearCartQuantity(state) {
+            state = initialState;
         },
-        toggleCart(state, action) {
-
+        toggleCart(state) {
+            state.cartOpen = !state.cartOpen;
         },
     },
 });
