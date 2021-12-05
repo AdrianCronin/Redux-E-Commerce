@@ -33,7 +33,10 @@ const cartSlice = createSlice({
             });
         },
         removeFromCart(state, action) {
-
+            state.cartOpen = true;
+            state.cart = state.cart.filter((product) => {
+                return product._id !== action.payload._id;
+            });
         },
         clearCartQuantity(state, action) {
 
