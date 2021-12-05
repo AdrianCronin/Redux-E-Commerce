@@ -26,8 +26,8 @@ const cartSlice = createSlice({
         updateCartQuantity(state, action) {
             state.cartOpen = true;
             state.cart.map((product) => {
-                if (action._id === product._id) {
-                    product.purchaseQuantity = action.purchaseQuantity;
+                if (action.payload._id === product._id) {
+                    product.purchaseQuantity = action.payload.purchaseQuantity;
                 }
                 return product;
             });
