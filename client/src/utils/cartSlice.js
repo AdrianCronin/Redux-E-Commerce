@@ -29,13 +29,14 @@ const cartSlice = createSlice({
             });
         },
         removeFromCartReducer(state, action) {
-            state.cart = state.cart.filter((product) => {
-                return product._id !== action.payload._id;
+            let newState = state.cart.filter((product) => {
+                return product._id !== action.payload;
             });
-            state.cartOpen = state.cart.length > 0;
+            state.cartOpen = newState.length > 0;
+            state.cart = newState;
         },
         clearCartQuantity(state) {
-            state = initialState;
+            state.cart = initialState;
         },
         toggleCartRedux(state) {
             state.cartOpen = !state.cartOpen;
