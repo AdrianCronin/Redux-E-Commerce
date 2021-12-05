@@ -36,7 +36,7 @@ const cartSlice = createSlice({
             state.cart = newState;
         },
         clearCartQuantity(state) {
-            state.cart = initialState;
+            state = initialState;
         },
         toggleCartRedux(state) {
             state.cartOpen = !state.cartOpen;
