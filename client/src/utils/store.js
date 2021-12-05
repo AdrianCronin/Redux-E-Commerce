@@ -1,18 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-const preLoadedState = {
-    products: [],
-    cart: [],
-    cartOpen: false,
-    categories: [],
-    currentCategory: '',
-};
+import productSlice from './productSlice';
+import categorySlice from './categorySlice';
+import cartSlice from './cartSlice';
 
 export const store = configureStore({
-    reducer:{
-        // reducers
+    reducer: {
+        product: productSlice,
+        category: categorySlice,
+        cart: cartSlice,
     },
-    preLoadedState,    
 });
 
 console.log(store.getState());
